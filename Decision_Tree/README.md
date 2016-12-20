@@ -1,3 +1,4 @@
+<script type="text/javascript"<src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 #简介
 决策树是对实例进行分类的树形结构，由节点和有向边组成,其中节点分为内部节点和叶子节点.内部节点对应特征(规则)，叶子节点对应各个类别.**需要保证特征(规则)互斥且完备**
 <div align=center>![Decision_Tree](Decision_Tree.PNG)</div>
