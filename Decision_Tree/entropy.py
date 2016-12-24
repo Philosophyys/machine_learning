@@ -78,4 +78,4 @@ def Conditional_Entropy(data):
 			property_category_probably=float(property_category_num+0.001)/float(property_num)
 			s-=property_category_probably*log(property_category_probably,2)
 		h_d_a+=s*property_probably
-	return h_d_a	
+	return h_d_a
