@@ -89,8 +89,14 @@ from entropy import *
 
 
 def train(test_data):
-	result = []
+	result = {}
 	for i in range(len(test_data[0])-1):
 		data = [[x[i],x[-1]] for x in test_data]
-		result.append(Select_Threshold(data))
-	print result
+		result[i]=Select_Threshold(data)
+	fore_values[0] = result[0]
+	# for x in result:
+	# 	if x.values[1] >= fore_values.values[1] :
+	# 		fore_values = x.values
+	print fore_values
+	#print R
+	#print result
