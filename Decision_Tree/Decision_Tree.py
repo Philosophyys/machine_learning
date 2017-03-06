@@ -1,6 +1,8 @@
 from entropy import *
 
-sleect_property=[]
+sleect_property = []
+#tree = {}
+R = []
 
 def select(test_data):
 	result = {}
@@ -11,6 +13,20 @@ def select(test_data):
 	R = sorted(x,key = lambda x:x[1][1])
 	return R[-1]
 
-def train(test_data):
-	for i in range(len(test_data[0])-1):
-		select(data)
+def _del(data):
+	global R
+	del data[R[0]]
+	return data
+
+def train(test_data,tree):
+	while((len(test_data[0])-1) != 0):
+		global R
+		R = select(test_data)
+		tree['class'] = R[0]
+		print tree['class']
+		print R
+		tree['threshold'] = R[1][0]
+		tree['sub_tree'] = {}
+		data = list(map(_del,test_data)) 
+		train(data,tree['sub_tree'])
+	return tree
