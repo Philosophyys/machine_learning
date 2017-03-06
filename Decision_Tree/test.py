@@ -1,11 +1,10 @@
 from Decision_Tree import *
 import string
-#from math import *
 input = file('D:\Program Files\Anaconda2\data.txt','r')
 data = input.readlines()
 
 i=0
-test_data=[([0]*5) for x in range(150)]#150*[5*[0]]
+test_data=[([0]*5) for x in range(150)]
 
 for lines in data:
 	line=string.split(lines,',')

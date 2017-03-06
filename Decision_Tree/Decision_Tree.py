@@ -1,8 +1,8 @@
 from entropy import *
 
 sleect_property = []
-#tree = {}
 R = []
+correct = ()
 
 def select(test_data):
 	result = {}
@@ -13,20 +13,33 @@ def select(test_data):
 	R = sorted(x,key = lambda x:x[1][1])
 	return R[-1]
 
-def _del(data):
+def split(test_data):
 	global R
-	del data[R[0]]
+	for x in test_data:
+		if x[R[0]] <= R[1][0]
+		data[0].append(x.pop[R[0]])
+	else:
+		data[1].append(x.pop[R[0]])
 	return data
 
-def train(test_data,tree):
+def _train(test_data,tree):
 	while((len(test_data[0])-1) != 0):
 		global R
+		global correct
 		R = select(test_data)
-		tree['class'] = R[0]
-		print tree['class']
 		print R
+		tree['class'] = correct[R[0]]
+		del(correct[R[0]])
 		tree['threshold'] = R[1][0]
-		tree['sub_tree'] = {}
-		data = list(map(_del,test_data)) 
-		train(data,tree['sub_tree'])
+		tree['left_sub_tree'] = {}
+		tree['right_sub_tree'] = {}		
+		data = split(test_data)
+		for x in data:
+			_train(x,tree['sub_tree'])
+	return tree
+
+def train(test_data,tree):
+	global correct
+	correct = range(len(test_data[0])-1)
+	_train(test_data,tree)
 	return tree
