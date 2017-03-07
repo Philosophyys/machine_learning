@@ -15,27 +15,28 @@ def select(test_data):
 
 def split(test_data):
 	global R
+	data = [[],[]]
 	for x in test_data:
-		if x[R[0]] <= R[1][0]
-		data[0].append(x.pop[R[0]])
-	else:
-		data[1].append(x.pop[R[0]])
+		if float(x[R[0]]) <= float(R[1][0]):
+			data[0].append(x[R[0]])
+		else:
+			data[1].append(x[R[0]])
 	return data
 
 def _train(test_data,tree):
+	global R
+	global correct
+	print test_data
 	while((len(test_data[0])-1) != 0):
-		global R
-		global correct
 		R = select(test_data)
-		print R
 		tree['class'] = correct[R[0]]
 		del(correct[R[0]])
 		tree['threshold'] = R[1][0]
-		tree['left_sub_tree'] = {}
-		tree['right_sub_tree'] = {}		
 		data = split(test_data)
-		for x in data:
-			_train(x,tree['sub_tree'])
+		for i in range(len(data)):
+			for x in data:
+				tree[('sub_tree_'+str(i))]={}
+				_train(x,tree[('sub_tree_'+str(i))])
 	return tree
 
 def train(test_data,tree):

@@ -9,6 +9,7 @@ def Select_Threshold(data):
 		back_value=data_[0]
 		back_property=data_[1]
 		if back_property!=fore_property:
+			#print (fore_value,back_value)
 			un_threshold.append((float(fore_value)+float(back_value))/2)
 			fore_value=back_value
 			fore_property=back_property

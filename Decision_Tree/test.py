@@ -14,7 +14,6 @@ for lines in data:
 	test_data[i][3]=line[3]
 	test_data[i][4]=line[4].strip('\n')
 	i+=1
-
 tree={}
 train(test_data,tree)
-print tree
+#print tree
