@@ -16,4 +16,4 @@ for lines in data:
 	i+=1
 tree={}
 train(test_data,tree)
-#print tree
+print tree

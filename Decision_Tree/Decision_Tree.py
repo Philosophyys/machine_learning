@@ -28,18 +28,17 @@ def split(test_data):
 def _train(test_data,tree):
 	global R
 	global correct
-	while((len(test_data[0])-1) != 0):
-		print len(test_data[0])
-		R = select(test_data)
-		tree['class'] = correct[R[0]]
-		del(correct[R[0]])
-		tree['threshold'] = R[1][0]
-		data = split(test_data)
-		for i in range(len(data)):
-
-			for x in data:
-				tree[('sub_tree_'+str(i))]={}
-				_train(x,tree[('sub_tree_'+str(i))])
+	if len(test_data) != 0:
+		while((len(test_data[0])-1) != 0):
+			R = select(test_data)
+			tree['class'] = correct[R[0]]	
+			del(correct[R[0]])
+			tree['threshold'] = R[1][0]
+			data = split(test_data)
+			if len(data) != 0:
+				for i in range(len(data[0])-1):
+					tree[('sub_tree_'+str(i))]={}
+					_train(data[i],tree[('sub_tree_'+str(i))])
 	return tree
 
 def train(test_data,tree):
