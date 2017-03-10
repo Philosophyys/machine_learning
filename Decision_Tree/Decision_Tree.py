@@ -22,19 +22,21 @@ def split(test_data):
 			data[0].append(x)
 		else:
 			x.pop(int(R[0]))
-			data[0].append(x)
+			data[1].append(x)
 	return data
 
 def _train(test_data,tree):
 	global R
 	global correct
-	if len(test_data) != 0:
+	print R
+	if len(test_data) != 1:
 		while((len(test_data[0])-1) != 0):
 			R = select(test_data)
 			tree['class'] = correct[R[0]]	
 			del(correct[R[0]])
 			tree['threshold'] = R[1][0]
 			data = split(test_data)
+			print data
 			if len(data) != 0:
 				for i in range(len(data[0])-1):
 					tree[('sub_tree_'+str(i))]={}
