@@ -2,4 +2,7 @@ from data_analysis import *
 import numpy as np
 import sys
 
-getdata('F:\dataset.txt')
+(attributes,data) = getdata('F:\dataset.txt')
+
+(mean,variance) = calculate(data,5)
+print (mean,variance)
