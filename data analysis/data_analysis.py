@@ -67,3 +67,22 @@ def calculate(data,num,type='number'):
 				pass
 	return (mean,variance)
 
+def miss_value(data, attributes, complete = 0):
+#Search miss value and complete it
+	miss_info = []
+	if complete == 0:
+		for key in attributes:
+			if attributes[key] == 'types':
+				continue
+			else:
+				for line in data:
+					if line[key] =='':
+						miss_info.append(item)
+					else:
+						pass
+		if len(miss_info) == 0:
+			print "NO,there isn't any miss value"
+		else:
+			print "Yes,miss value are in %s", miss_info
+	else:
+		pass

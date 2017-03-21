@@ -4,5 +4,5 @@ import sys
 
 (attributes,data) = getdata('F:\dataset.txt')
 
-(mean,variance) = calculate(data,5)
-print (mean,variance)
+(mean,variance) = calculate(data,2)
+print data
