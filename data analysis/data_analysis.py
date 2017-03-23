@@ -86,3 +86,16 @@ def miss_value(data, attributes, complete = 0):
 			print "Yes,miss value are in %s", miss_info
 	else:
 		pass
+
+def data_balance(data,attributes):
+	for key in attributes:
+		if attributes[key] == 'types':
+			types_num = key
+		else:
+			pass
+	types = data[:,types_num]
+	types_set = np.unique(types)
+	print 'Types:'
+	for t in types_set:
+		print 'type %s:\t%s' %(t,(types == t).sum())
+		

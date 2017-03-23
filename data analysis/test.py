@@ -5,4 +5,5 @@ import sys
 (attributes,data) = getdata('F:\dataset.txt')
 
 (mean,variance) = calculate(data,2)
-print data
+
+data_balance(data,attributes)
