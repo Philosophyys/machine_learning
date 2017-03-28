@@ -1,6 +1,29 @@
+'''
+author: Yishixiang
+date: 2017/3/24
+function:
+####################################################
+getdata(filename)
+input:filename
+output: (attributes,data), and data'type is numpy
+####################################################
+istypes(data)
+input: the data of the output data of the function getdata
+output: print the types of the attributes(number, string, others)
+####################################################
+calculate(data,num,type='number')
+input: 
+output: the (mean,variance) of the appointed data
+####################################################
+miss_value(data, attributes, complete = 0)
+output: judge whether there is missing value
+####################################################
+data_balance(data, attributes, complete = 0)
+output:print the number of each type 
+####################################################
+'''
 import numpy as np
 import math
-import pylab
 
 def getdata(filename):
 	'''

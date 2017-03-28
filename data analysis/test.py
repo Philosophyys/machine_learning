@@ -1,9 +1,14 @@
 from data_analysis import *
 import numpy as np
-import sys
 
 (attributes,data) = getdata('F:\dataset.txt')
 
-(mean,variance) = calculate(data,2)
+istypes(data)
+
+(mean,variance) = calculate(data,1)
+
+print 'mean=%s,variance=%s'%(mean,variance)
+
+miss_value(data, attributes)
 
 data_balance(data,attributes)
